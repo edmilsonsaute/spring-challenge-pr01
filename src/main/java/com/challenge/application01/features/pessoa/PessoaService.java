@@ -2,6 +2,7 @@ package com.challenge.application01.features.pessoa;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -49,5 +50,24 @@ public class PessoaService {
         }
 
         return responseDTOs;
+    }
+
+    public PessoaResponseDTO obterPessoaViaId(Long id){
+
+        Optional<PessoaModel> pessoa = pessoaRepository.findById(id);
+
+        if(pessoa.isEmpty()){
+            throw new RuntimeException("Pessoa nao encontrada");
+        }
+
+        PessoaResponseDTO pessoaResponseDTO = PessoaResponseDTO.builder()
+                            .nome(pessoa.get().getNome())
+                            .apelido(pessoa.get().getApelido())
+                            .idade(pessoa.get().getIdade())
+                            .genero_id(pessoa.get().getGenero_id())
+                            .endereco_id(pessoa.get().getEndereco_id())
+                            .build();
+        
+        return pessoaResponseDTO;
     }
 }
