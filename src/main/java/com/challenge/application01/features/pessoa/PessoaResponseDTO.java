@@ -18,5 +18,6 @@ public class PessoaResponseDTO {
     private long endereco_id;
     private String nome;
     private String apelido;
-    private short idade;
+    private byte idade;
+    private String passoword;
 }

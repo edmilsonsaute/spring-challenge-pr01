@@ -15,7 +15,7 @@ public class PessoaService {
         this.pessoaRepository = pessoaRepository;
     }
 
-    public void registarPessoa(PessoaRequestDTO pessoaRequestDTO){
+    public PessoaResponseDTO registarPessoa(PessoaRequestDTO pessoaRequestDTO){
 
         PessoaModel pessoa = PessoaModel.builder()
                         .nome(pessoaRequestDTO.getNome())
@@ -23,8 +23,19 @@ public class PessoaService {
                         .idade(pessoaRequestDTO.getIdade())
                         .genero_id(pessoaRequestDTO.getGenero_id())
                         .endereco_id(pessoaRequestDTO.getEndereco_id())
+                        .password(pessoaRequestDTO.getPassword())
+                        .build();
+                        
+        PessoaResponseDTO pessoaResponseDTO = PessoaResponseDTO.builder()
+                        .nome(pessoa.getNome())
+                        .apelido(pessoa.getApelido())
+                        .idade(pessoa.getIdade())
+                        .genero_id(pessoa.getGenero_id())
+                        .endereco_id(pessoa.getEndereco_id())
                         .build();
         pessoaRepository.save(pessoa);
+
+        return pessoaResponseDTO;
     }
 
     public List<PessoaResponseDTO> listarPessoas(){
