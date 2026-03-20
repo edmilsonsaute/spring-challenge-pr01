@@ -1,6 +1,7 @@
 package com.challenge.application01.features.pessoa;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,13 +16,15 @@ public class PessoaRequestDTO {
     @NotBlank(message =  "Apelido é obrigatorio.")
     private String apelido;
 
-    @NotBlank(message =  "Idade é obrigatorio.")
-    private short idade;
+    @NotNull(message =  "Idade é obrigatorio.")
+    private byte idade;
 
-    @NotBlank(message =  "Genero é obrigatorio.")
+    @NotNull(message =  "Genero é obrigatorio.")
     private long genero_id;
 
-    @NotBlank(message =  "Endereço é obrigatorio.")
+    @NotNull(message =  "Endereço é obrigatorio.")
     private long endereco_id;
     
+    @NotBlank(message =  "Password é obrigatorio.")
+    private String password;
 }
