@@ -40,7 +40,7 @@ public class PaisService {
         return pais;
     }
 
-    public PaisModel atualizarPais(Long id, PaisModel paisDados) {
+    public PaisModel atualizarPais(long id, PaisModel paisDados) {
         PaisModel pais = paisRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pais nao encontrado"));
 
