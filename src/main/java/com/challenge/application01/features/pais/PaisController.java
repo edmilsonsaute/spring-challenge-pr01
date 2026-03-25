@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/pais")
+@RequestMapping("/paises")
 public class PaisController {
     
     private final PaisService paisService;
