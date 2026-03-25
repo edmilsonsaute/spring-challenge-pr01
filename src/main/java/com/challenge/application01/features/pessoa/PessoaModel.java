@@ -17,9 +17,9 @@ public class PessoaModel {
     @Id
     private Long id;
 
-    private long genero_id;
-    private long endereco_id;
-    private byte idade;
+    private Long genero_id;
+    private Long endereco_id;
+    private Byte idade;
     private String nome;
     private String apelido;
     private String password;

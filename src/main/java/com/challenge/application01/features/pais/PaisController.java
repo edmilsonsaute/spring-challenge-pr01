@@ -36,19 +36,20 @@ public class PaisController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PaisModel> obterPaisViaId(@PathVariable long id){
+    public ResponseEntity<PaisModel> obterPaisViaId(@PathVariable Long id){
         PaisModel pais = paisService.obterPaisViaId(id);
         return ResponseEntity.status(200).body(pais);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<PaisModel> atualizarPais(@PathVariable long id, @RequestBody PaisModel paisModel){
+    public ResponseEntity<PaisModel> atualizarPais(@PathVariable Long id, @RequestBody PaisModel paisModel){
         PaisModel pais = paisService.atualizarPais(id, paisModel);
+        System.out.print(pais.getId());
         return ResponseEntity.status(200).body(pais);
     }
 
     @DeleteMapping("/{id}")
-    public void apagarPais(long id){
+    public void apagarPais(@PathVariable Long id){
         paisService.apagarPais(id);
     }
 }

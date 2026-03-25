@@ -49,20 +49,20 @@ public class PessoaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PessoaResponseDTO> obterPessoa(@PathVariable long id){
+    public ResponseEntity<PessoaResponseDTO> obterPessoa(@PathVariable Long id){
         PessoaResponseDTO pessoa = pessoaService.obterPessoaViaId(id);
 
         return ResponseEntity.status(200).body(pessoa);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<PessoaResponseDTO> atualizarPessoa(@PathVariable long id, @RequestBody PessoaUpdateDTO pessoaUpdateDTO){
+    public ResponseEntity<PessoaResponseDTO> atualizarPessoa(@PathVariable Long id, @RequestBody PessoaUpdateDTO pessoaUpdateDTO){
         PessoaResponseDTO pessoa = pessoaService.atualizarPessoa(id, pessoaUpdateDTO);
         return ResponseEntity.status(200).body(pessoa);
     }
 
     @DeleteMapping("/{id}")
-    public void apagarPessoa(@PathVariable long id){
+    public void apagarPessoa(@PathVariable Long id){
         pessoaService.apagarPessoa(id);
     }
 }
