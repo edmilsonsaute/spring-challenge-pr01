@@ -13,10 +13,10 @@ import lombok.Setter;
 @Builder
 public class PessoaResponseDTO {
 
-    private long id;
-    private long genero_id;
-    private long endereco_id;
+    private Long id;
+    private Long genero_id;
+    private Long endereco_id;
     private String nome;
     private String apelido;
-    private byte idade;
+    private Byte idade;
 }

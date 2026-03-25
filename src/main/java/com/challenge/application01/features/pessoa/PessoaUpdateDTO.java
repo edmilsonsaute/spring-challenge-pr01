@@ -15,7 +15,7 @@ import lombok.Setter;
 public class PessoaUpdateDTO {
     private String nome;
     private String apelido;
-    private byte idade;
-    private long endereco_id;
-    private long genero_id;
+    private Byte idade;
+    private Long endereco_id;
+    private Long genero_id;
 }

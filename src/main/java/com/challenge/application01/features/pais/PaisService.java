@@ -34,13 +34,13 @@ public class PaisService {
         return listaPaises;
     }
 
-    public PaisModel obterPaisViaId(long id) {
+    public PaisModel obterPaisViaId(Long id) {
         PaisModel pais = paisRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pais nao encontrado"));
         return pais;
     }
 
-    public PaisModel atualizarPais(long id, PaisModel paisDados) {
+    public PaisModel atualizarPais(Long id, PaisModel paisDados) {
         PaisModel pais = paisRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pais nao encontrado"));
 
@@ -51,13 +51,14 @@ public class PaisService {
         if (paisDados.getSigla() != null) {
             pais.setSigla(paisDados.getSigla());
         }
+   
 
         paisRepository.save(pais);
 
         return pais;
     }
 
-    public void apagarPais(long id){
+    public void apagarPais(Long id){
         paisRepository.deleteById(id);;
     }
 }

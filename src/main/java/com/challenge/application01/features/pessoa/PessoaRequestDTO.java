@@ -17,13 +17,13 @@ public class PessoaRequestDTO {
     private String apelido;
 
     @NotNull(message =  "Idade é obrigatorio.")
-    private byte idade;
+    private Byte idade;
 
     @NotNull(message =  "Genero é obrigatorio.")
-    private long genero_id;
+    private Long genero_id;
 
     @NotNull(message =  "Endereço é obrigatorio.")
-    private long endereco_id;
+    private Long endereco_id;
     
     @NotBlank(message =  "Password é obrigatorio.")
     private String password;

@@ -121,7 +121,7 @@ public class PessoaService {
         return pessoaResponseDTO;
     }
 
-    public void apagarPessoa(long id) {
+    public void apagarPessoa(Long id) {
         PessoaModel pessoa = pessoaRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Pessoa nao encontrada"));
 

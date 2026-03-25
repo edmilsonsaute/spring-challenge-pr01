@@ -18,7 +18,7 @@ import lombok.Setter;
 public class PaisModel {
 
     @Id
-    private long id;
+    private Long id;
     private String nome;
     private String sigla;
 }
